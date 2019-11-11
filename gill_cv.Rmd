@@ -75,7 +75,7 @@ Contact {#contact}
 Skills {#skills}
 --------------------------------------------------------------------------------
 
-- <i class="fa fa-laptop"></i> **Programming**: R, Bioconductor, bookdown, Python, GitHub
+- <i class="fa fa-laptop"></i> **Programming**: R, Bioconductor, Python, Unix, GitHub, HTML
 - <i class="fa fa-flask"></i> **Laboratory**: Cell culture, western blot, genotyping, qRT-PCR, primer design, flow cytometry, transfection, lentivirus production, mouse husbandry, zebrafish husbandry
 - <i class="fa fa-lightbulb-o"></i> **Other**: Science teaching, science writing, data analysis, data visualization, statistics, experimental design
 
@@ -97,15 +97,7 @@ Main
 
 Amy Gill {#title}
 --------------------------------------------------------------------------------
-
-
-```{r}
-intro_text <- "I am an aspiring biomedical data scientist and quantitative biology educator. My career goals are to advance personalized cancer therapy with data-driven systems biology and improve quantitative biology education resources. I currently seek a doctoral program to enhance my bioinformatics and quantitative biology skills and perform patient-centered research."
-
-cat(sanitize_links(intro_text))
-```
-
-
+My career goals are to advance personalized cancer therapy with data-driven systems biology and improve quantitative biology education resources. I currently seek a doctoral program to enhance my bioinformatics skills and perform patient-centered research.
 
 Education {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
@@ -158,9 +150,6 @@ Programming and Quantitative Courses {data-icon=laptop}
 ```{r}
 print_section(position_data, 'quantitative')
 ```
-
-
-
 
 ```{r}
 if(PDF_EXPORT){
