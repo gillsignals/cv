@@ -1,0 +1,183 @@
+---
+title: "Amy Gill's CV"
+author: Amy Gill
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    css: ['css/styles.css', 'resume']
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: true
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+
+library(glue)
+library(tidyverse)
+
+# Set this to true to have links turned into footnotes at the end of the document
+PDF_EXPORT <- FALSE
+
+# Holds all the links that were inserted for placement at the end
+links <- c()
+
+source('parsing_functions.R')
+
+# Load csv with position info
+position_data <- read_csv('positions.csv')
+```
+
+
+```{r}
+# When in export mode the little dots are unaligned, so fix that. 
+if(PDF_EXPORT){
+  cat("
+  <style>
+  :root{
+    --decorator-outer-offset-left: -6.5px;
+  }
+  </style>")
+}
+```
+
+
+Aside
+================================================================================
+
+<!--
+![logo](beta_dist.png){width=100%}
+
+```{r}
+# When in export mode the little dots are unaligned, so fix that. 
+if(PDF_EXPORT){
+  cat("View this CV online with links at _amygill.net/cv_")
+} else {
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf)")
+}
+```
+-->
+
+Contact {#contact}
+--------------------------------------------------------------------------------
+
+
+- <i class="fa fa-envelope"></i> gill.signals@gmail.com
+- <i class="fa fa-github"></i> [github.com/gillsignals](http://github.com/gillsignals)
+<!-- - <i class="fa fa-link"></i> [amygill.net](http://amygill.net/) --> 
+- <i class="fa fa-phone"></i> (847) 477-3100
+- <i class="fa fa-linkedin"></i> [linkedin.com/in/amy-gill-29693244/](https://www.linkedin.com/in/amy-gill-29693244/)
+
+
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-laptop"></i> **Programming**: R, Bioconductor, bookdown, Python, GitHub
+- <i class="fa fa-flask"></i> **Laboratory**: Cell culture, western blot, genotyping, qRT-PCR, primer design, flow cytometry, transfection, lentivirus production, mouse husbandry, zebrafish husbandry
+- <i class="fa fa-lightbulb-o"></i> **Other**: Science teaching, science writing, data analysis, data visualization, statistics, experimental design
+
+
+
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
+
+The source code is available at [github.com/gillsignals/cv](https://github.com/gillsignals/cv).
+
+Last updated on `r Sys.Date()`.
+
+
+Main
+================================================================================
+
+Amy Gill {#title}
+--------------------------------------------------------------------------------
+
+
+```{r}
+intro_text <- "I am an aspiring biomedical data scientist and quantitative biology educator. My career goals are to advance personalized cancer therapy with data-driven systems biology and improve quantitative biology education resources. I currently seek a doctoral program to enhance my bioinformatics and quantitative biology skills and perform patient-centered research."
+
+cat(sanitize_links(intro_text))
+```
+
+
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'education')
+```
+
+
+Research Experience {data-icon=flask}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'research_positions')
+```
+
+
+Teaching Experience {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'teaching_positions')
+```
+
+
+Peer-reviewed Publications {data-icon=book}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'publications')
+```
+
+Posters and Presentations {data-icon=bar-chart}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'presentations')
+```
+
+Selected Science Writing {data-icon=pencil}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'science_writing')
+```
+
+Programming and Quantitative Courses {data-icon=laptop}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'quantitative')
+```
+
+
+
+
+```{r}
+if(PDF_EXPORT){
+  cat("
+  
+Links {data-icon=link}
+--------------------------------------------------------------------------------
+
+<br>
+
+
+")
+  
+  walk2(links, 1:length(links), function(link, index){
+    print(glue('{index}. {link}'))
+  })
+}
+```
+
+
