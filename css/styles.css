@@ -76,9 +76,10 @@ sup {
   content: "• ";
 }
 
-/* Make sure elements in asside are centered and have a nice small text */
+/* Make sure elements in aside are centered and have a nice small text */
 .aside {
   width: calc(var(--sidebar-width) + 9px);
+  padding: 0 0 0 0;
   line-height: 1.2;
   font-size: 0.75rem;
 }
@@ -101,3 +102,10 @@ sup {
   width: 100%;
 }
 
+
+/* have a sidebar item on second page with a header! */
+#main #awards-honors, #main #online-courses, #main #selected-science-writings {
+  --decorator-border: none;
+  left: auto;
+  margin-left: 0.15in;
+}

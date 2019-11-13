@@ -75,11 +75,16 @@ Contact {#contact}
 Skills {#skills}
 --------------------------------------------------------------------------------
 
-- <i class="fa fa-laptop"></i> **Programming**: R, Bioconductor, Python, Unix, GitHub, HTML
+- <i class="fa fa-laptop"></i> **Programming**: R, Bioconductor, Python, GitHub, HTML
 - <i class="fa fa-flask"></i> **Laboratory**: Cell culture, western blot, genotyping, qRT-PCR, primer design, flow cytometry, transfection, lentivirus production, mouse husbandry, zebrafish husbandry
-- <i class="fa fa-lightbulb-o"></i> **Other**: Science teaching, science writing, data analysis, data visualization, statistics, experimental design
+- <i class="fa fa-lightbulb-o"></i> **Other**: Science teaching, science writing, data analysis, data visualization, statistics, machine learning, experimental design
 
 
+Credentials
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-chart-area"></i> [HarvardX Data Science Professional Certificate](https://www.edx.org/professional-certificate/harvardx-data-science)
+- <i class="fa fa-drivers-license"></i> Professional Educator License (IL): Secondary Biology, Secondary Chemistry
 
 
 Disclaimer {#disclaimer}
@@ -89,6 +94,8 @@ Made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
 
 The source code is available at [github.com/gillsignals/cv](https://github.com/gillsignals/cv).
 
+See the full version of this CV with links at [amygill.net/cv](http://amygill.net/cv).
+
 Last updated on `r Sys.Date()`.
 
 
@@ -97,7 +104,7 @@ Main
 
 Amy Gill {#title}
 --------------------------------------------------------------------------------
-My career goals are to advance personalized cancer therapy with data-driven systems biology and improve quantitative biology education resources. I currently seek a doctoral program to enhance my bioinformatics skills and perform patient-centered research.
+My career goals are to advance personalized cancer therapy with data-driven systems biology and improve quantitative biology education resources. I currently seek a doctoral program to enhance my bioinformatics skills, practice teaching and perform patient-centered research.
 
 Education {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
@@ -115,6 +122,27 @@ print_section(position_data, 'research_positions')
 ```
 
 
+:::aside
+Online Courses
+--------------------------------------------------------------------------------
+-  **edX**: [HarvardX Data Science Professional Certificate (9/9)](https://www.edx.org/professional-certificate/harvardx-data-science); [MITx Quantitative Biology Workshop](https://www.edx.org/course/quantitative-biology-workshop-0)
+-  **Coursera**: [Genomic Data Science, JHU (7/8 courses)](https://www.coursera.org/specializations/genomic-data-science); [Mathematics for Machine Learning: Linear Algebra, Imperial College London](https://www.coursera.org/learn/linear-algebra-machine-learning)
+
+Awards & Honors
+--------------------------------------------------------------------------------
+
+- **Adlai E. Stevenson High School**
+- Ambassador Award (2017)
+- Special Staff Recognition (2016)
+- **University of Chicago**
+- Bernice Goldblatt Scholar, Cancer Research Foundation (2012-2013)
+- Honored Graduate Student, UChicago Cancer Center Women's Board (2011-2012)
+- General Honors (2011)
+- Dean's List	(2008-2011)
+- National Merit Scholar (2007)
+
+:::
+
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
@@ -122,6 +150,15 @@ Teaching Experience {data-icon=chalkboard-teacher}
 print_section(position_data, 'teaching_positions')
 ```
 
+:::aside
+Selected Science Writings</i>
+--------------------------------------------------------------------------------
+
+- [More datasets for teaching data science: The expanded dslabs package](https://simplystatistics.org/2019/07/19/more-datasets-for-teaching-data-science-the-expanded-dslabs-package/). Simply Statistics guest blog post, 2019.
+- [Prediction of breast cancer from nuclear features of fine needle aspirate biopsies](https://github.com/gillsignals/brca-capstone/blob/master/brca-report.pdf). HarvardX Data Science capstone project, 2019.
+- [Cellular and molecular characterization of Blimp1 activation in response to ionizing radiation and its relevance to radiogenic breast cancer](https://github.com/gillsignals/science-docs/tree/master/thesis_proposal). Thesis proposal, University of Chicago Committee on Cancer Biology, 2013.
+- [HBP1 promotes neuroblastoma differentiation by inhibiting MYCN transcription factor activity](https://github.com/gillsignals/science-docs/tree/master/prelim). Qualifying exam, University of Chicago Committee on Cancer Biology, 2013.
+:::
 
 Peer-reviewed Publications {data-icon=book}
 --------------------------------------------------------------------------------
@@ -137,19 +174,6 @@ Posters and Presentations {data-icon=bar-chart}
 print_section(position_data, 'presentations')
 ```
 
-Selected Science Writing {data-icon=pencil}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'science_writing')
-```
-
-Programming and Quantitative Courses {data-icon=laptop}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'quantitative')
-```
 
 ```{r}
 if(PDF_EXPORT){

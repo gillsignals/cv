@@ -1,0 +1,156 @@
+---
+title: "Amy Gill's Resume"
+author: Amy Gill
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    css: ['css/resume_styles.css', 'resume']
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: true
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+
+library(glue)
+library(tidyverse)
+
+# Set this to true to have links turned into footnotes at the end of the document
+PDF_EXPORT <- FALSE
+
+# Holds all the links that were inserted for placement at the end
+links <- c()
+
+source('parsing_functions.R')
+
+# Load csv with position info
+position_data <- read_csv('resume_positions.csv')
+```
+
+
+```{r}
+# When in export mode the little dots are unaligned, so fix that. 
+if(PDF_EXPORT){
+  cat("
+  <style>
+  :root{
+    --decorator-outer-offset-left: -6.5px;
+  }
+  </style>")
+}
+```
+
+
+Aside
+================================================================================
+
+Contact {#contact}
+--------------------------------------------------------------------------------
+
+
+- <i class="fa fa-envelope"></i> gill.signals@gmail.com
+- <i class="fa fa-github"></i> [github.com/gillsignals](http://github.com/gillsignals)
+<!-- - <i class="fa fa-link"></i> [amygill.net](http://amygill.net/) --> 
+- <i class="fa fa-phone"></i> (847) 477-3100
+- <i class="fa fa-linkedin"></i> [linkedin.com/in/amy-gill-29693244/](https://www.linkedin.com/in/amy-gill-29693244/)
+
+
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-laptop"></i> **Programming**: R, Bioconductor, Python, GitHub, HTML
+- <i class="fa fa-flask"></i> **Laboratory**: Cell culture, western blot, genotyping, qRT-PCR, primer design, flow cytometry, transfection, lentivirus production, mouse husbandry, zebrafish husbandry
+- <i class="fa fa-lightbulb-o"></i> **Other**: Science teaching, science writing, data analysis, data visualization, statistics, machine learning, experimental design
+
+
+Credentials
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-chart-area"></i> [HarvardX Data Science Professional Certificate](https://www.edx.org/professional-certificate/harvardx-data-science)
+- <i class="fa fa-drivers-license"></i> Professional Educator License (IL): Secondary Biology, Secondary Chemistry
+
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
+
+The source code is available at [github.com/gillsignals/cv](https://github.com/gillsignals/cv).
+
+See the full version of this CV with links at [amygill.net/cv](http://amygill.net/cv).
+
+Last updated on `r Sys.Date()`.
+
+
+Main
+================================================================================
+
+Amy Gill {#title}
+--------------------------------------------------------------------------------
+My career goals are to advance personalized cancer therapy with data-driven systems biology and improve quantitative biology education resources. I currently seek a doctoral program to enhance my bioinformatics skills, practice teaching and perform patient-centered research.
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'education')
+```
+
+
+Research Experience {data-icon=flask}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'research_positions')
+```
+
+
+:::aside
+
+Peer-reviewed Publications
+--------------------------------------------------------------------------------
+- [Splicing modulation sensitizes chronic lymphocytic leukemia cells to venetoclax by remodeling mitochondrial apoptotic dependencies](https://www.ncbi.nlm.nih.gov/pubmed/30282833). Ten Hacken E et al. (2018), JCI Insight 3(19).
+- [Identification of Novel Protein Expression Changes Following Cisplatin Treatment and Application to Combination Therapy](https://www.ncbi.nlm.nih.gov/pubmed/28902521). Stark AL et al (2017). Journal of Proteome Research, 16(11): 4227-4236.
+- [Truncated DNMT3B isoform DNMT3B7 suppresses growth, induces differentiation, and alters DNA methylation in human neuroblastoma.](https://www.ncbi.nlm.nih.gov/pubmed/22815530). Ostler KR et al (2012). Cancer Research 72(18): 4714-23.
+
+
+Posters and Presentations
+--------------------------------------------------------------------------------
+- [The role of PRDM1 in protection against radiogenic breast cancer.](https://github.com/gillsignals/science-docs/blob/master/prdm1_talk_140305.pptx) Oral presentation, Dept. Pediatric Hem/Onc, UChicago (2014).
+- The role of Blimp1 in protection against ionizing radiation in breast cells. Poster, Biomedical Sciences Retreat, UChicago (2014).
+- Systems analysis of cytarabine response and resistance in hematopoietic cells. Poster, Biomedical Sciences Retreat, UChicago (2013).
+:::
+
+Teaching Experience {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'teaching_positions')
+```
+
+
+
+
+```{r}
+if(PDF_EXPORT){
+  cat("
+  
+Links {data-icon=link}
+--------------------------------------------------------------------------------
+
+<br>
+
+
+")
+  
+  walk2(links, 1:length(links), function(link, index){
+    print(glue('{index}. {link}'))
+  })
+}
+```
+
+
