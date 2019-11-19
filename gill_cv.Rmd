@@ -65,8 +65,8 @@ Contact {#contact}
 
 
 - <i class="fa fa-envelope"></i> gill.signals@gmail.com
+- <i class="fa fa-link"></i> [amygill.net](http://amygill.net/)
 - <i class="fa fa-github"></i> [github.com/gillsignals](http://github.com/gillsignals)
-<!-- - <i class="fa fa-link"></i> [amygill.net](http://amygill.net/) --> 
 - <i class="fa fa-phone"></i> (847) 477-3100
 - <i class="fa fa-linkedin"></i> [linkedin.com/in/amy-gill-29693244/](https://www.linkedin.com/in/amy-gill-29693244/)
 
