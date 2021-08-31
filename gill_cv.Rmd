@@ -9,6 +9,15 @@ output:
     self_contained: true
 ---
 
+```{css, echo=FALSE}
+.pagedjs_page:not(:first-of-type) {
+  --sidebar-width: 0rem;
+  --sidebar-background-color: #ffffff;
+  --main-width: calc(var(--content-width) - var(--sidebar-width));
+  --decorator-horizontal-margin: 0.2in;
+}
+```
+
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
   results='asis', 
@@ -75,7 +84,7 @@ Contact {#contact}
 Skills {#skills}
 --------------------------------------------------------------------------------
 
-- <i class="fa fa-laptop"></i> **Programming**: R, Bioconductor, Python, GitHub, HTML
+- <i class="fa fa-laptop"></i> **Programming**: R, Bioconductor, Matlab, Python, GitHub, HTML
 - <i class="fa fa-flask"></i> **Laboratory**: Cell culture, western blot, genotyping, qRT-PCR, primer design, flow cytometry, transfection, lentivirus production, mouse husbandry, zebrafish husbandry
 - <i class="fa fa-lightbulb-o"></i> **Other**: Science teaching, science writing, data analysis, data visualization, statistics, machine learning, experimental design
 
@@ -122,43 +131,12 @@ print_section(position_data, 'research_positions')
 ```
 
 
-:::aside
-Online Courses
---------------------------------------------------------------------------------
--  **edX**: [HarvardX Data Science Professional Certificate (9/9)](https://www.edx.org/professional-certificate/harvardx-data-science); [MITx Quantitative Biology Workshop](https://www.edx.org/course/quantitative-biology-workshop-0)
--  **Coursera**: [Genomic Data Science, JHU (7/8 courses)](https://www.coursera.org/specializations/genomic-data-science); [Mathematics for Machine Learning: Linear Algebra, Imperial College London](https://www.coursera.org/learn/linear-algebra-machine-learning)
-
-Awards & Honors
---------------------------------------------------------------------------------
-
-- **Adlai E. Stevenson High School**
-- Ambassador Award (2017)
-- Special Staff Recognition (2016)
-- **University of Chicago**
-- Bernice Goldblatt Scholar, Cancer Research Foundation (2012-2013)
-- Honored Graduate Student, UChicago Cancer Center Women's Board (2011-2012)
-- General Honors (2011)
-- Dean's List	(2008-2011)
-- National Merit Scholar (2007)
-
-:::
-
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
 ```{r}
 print_section(position_data, 'teaching_positions')
 ```
-
-:::aside
-Selected Science Writings</i>
---------------------------------------------------------------------------------
-
-- [More datasets for teaching data science: The expanded dslabs package](https://simplystatistics.org/2019/07/19/more-datasets-for-teaching-data-science-the-expanded-dslabs-package/). Simply Statistics guest blog post, 2019.
-- [Prediction of breast cancer from nuclear features of fine needle aspirate biopsies](https://github.com/gillsignals/brca-capstone/blob/master/brca-report.pdf). HarvardX Data Science capstone project, 2019.
-- [Cellular and molecular characterization of Blimp1 activation in response to ionizing radiation and its relevance to radiogenic breast cancer](https://github.com/gillsignals/science-docs/tree/master/thesis_proposal). Thesis proposal, University of Chicago Committee on Cancer Biology, 2013.
-- [HBP1 promotes neuroblastoma differentiation by inhibiting MYCN transcription factor activity](https://github.com/gillsignals/science-docs/tree/master/prelim). Qualifying exam, University of Chicago Committee on Cancer Biology, 2013.
-:::
 
 Peer-reviewed Publications {data-icon=book}
 --------------------------------------------------------------------------------
