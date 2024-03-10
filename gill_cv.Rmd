@@ -2,6 +2,7 @@
 title: "Amy Gill's CV"
 author: Amy Gill
 date: "`r Sys.Date()`"
+knit: pagedown::chrome_print # comment to save as HTML, uncomment for PDF
 output:
   pagedown::html_resume:
     css: ['css/styles.css', 'resume']
@@ -113,7 +114,8 @@ Main
 
 Amy Gill {#title}
 --------------------------------------------------------------------------------
-My career goals are to advance personalized cancer therapy with data-driven systems biology and improve quantitative biology education resources. I currently seek a doctoral program to enhance my bioinformatics skills, practice teaching and perform patient-centered research.
+
+I aim to improve understanding of cell signaling networks using mechanistic computational modeling, and integrate insights from single-cell RNA sequencing into mechanistic models of molecular networks, and advance personalized cancer therapy with data-driven systems biology.
 
 Education {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
